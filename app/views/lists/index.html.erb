@@ -1,0 +1,23 @@
+<%# BANNER %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("list_banner.jpg")  %>);">
+  <div class="container">
+    <h1><strong>The Movie DB</strong>!</h1>
+    <p>The best movies in the world - not even kidding, we have like 10 in our DB.</p>
+    <a class="btn btn-primary" href="#">Select a random list</a>
+  </div>
+</div>
+
+<%# CONTENT %>
+<div class="container my-5">
+  <h3>List Overview</h3>
+  <div class="row row-cols-1 row-cols-md-3">
+    <% @lists.each do |list| %>
+      <div class="col mb-4">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("list_banner.jpg") %>)">
+          <p id="movie-title"><%= link_to list[:name], list_path(list.id) %></p>
+        </div>
+      </div>
+        <% end %>
+  </div>
+  <%= link_to "(+) New List", new_list_path, class: "btn btn-success" %>
+</div>

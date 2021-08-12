@@ -1,0 +1,58 @@
+<%# NAVBAR %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Messages", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%# CONTENT %>
+<div  class="container my-5">
+  <h3>Movies Overview</h3>
+  <div class="row row-cols-1 row-cols-md-2">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="mb-4">
+        <div class="card h-100" style="width: 28rem;">
+          <img src="<%= image_path("batman.jpg") %>" style="height: 15rem;" class="card-img-top" alt="batman">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title"><%= "#{bookmark.movie[:title]}" %></h5>
+              <p class="card-text" id="card-text"><%= "#{bookmark.movie[:overview]}" %></p>
+            </div>
+            <div>
+              <hr>
+              <p class="card-text"><%= "#{bookmark[:comment]}" %></p>
+              <%= link_to "Remove", bookmark_path(bookmark),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "(<) Back", lists_path, class: "btn btn-primary" %>
+  <%= link_to "(+) Bookmark", new_list_bookmark_path(@list.id), class: "btn btn-primary" %>
+</div>
