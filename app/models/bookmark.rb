@@ -9,4 +9,5 @@ class Bookmark < ApplicationRecord
   validates :list, presence: true
   validates_uniqueness_of :movie, :scope => [:list]
 
+  has_one_attached :photo
 end
