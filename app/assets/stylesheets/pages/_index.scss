@@ -1,8 +1,26 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "../components/_button";
+@import "../components/_card";
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.list-overview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 
 h3 {
   font-size: 30px;
+}
+
+.list-overview-title {
+  color: #1EDD88;
 }
 
 ul.row {
@@ -11,31 +29,7 @@ ul.row {
   margin: 0px;
 }
 
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  opacity: 0.9;
 
-  a {
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-
-  &:hover {
-    box-shadow: 1px 1px 12px 6px rgba(0, 0, 0, .4);
-    opacity: 1;
-  }
-}
 
 .container {
   margin: 30px auto; width: 970px;

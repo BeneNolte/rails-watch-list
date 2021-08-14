@@ -1,6 +1,6 @@
 <%= simple_form_for [ @list, @bookmark ] do |f| %>
   <%= f.input :comment %>
-  <%= f.input :photo, as: :file %>
+  <%# <%= f.input :photo, as: :file %>
   <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Choose a movie" %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

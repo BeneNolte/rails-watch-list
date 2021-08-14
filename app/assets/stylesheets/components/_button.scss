@@ -1,0 +1,35 @@
+.card-absolute {
+  position: relative;
+}
+#round-delete-btn {
+  font-size: 12px;
+  font-weight: lighter;
+  color: black;
+  transform: rotate(-45deg);
+  border: 1px solid black;
+  padding: 0px 5.5px;
+  border-radius: 100%;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+
+  &:hover {
+    color:white;
+    background-color: black;
+  }
+}
+
+#round-add-button {
+  font-size: 24px;
+  font-weight: lighter;
+  color: #1EDD88;
+  border: 1px solid #1EDD88;
+  padding: 5px 15px;
+  border-radius: 100%;
+  text-decoration: none;
+  &:hover {
+    color:white;
+    background-color: #1EDD88;
+  }
+
+}
